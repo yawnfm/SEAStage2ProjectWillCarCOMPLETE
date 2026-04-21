@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overwatch | Hero Analytics</title>
+    <meta name="description" content="Overwatch Hero Statistics - Rise of Talon Season" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="scripts.js"></script>
+  </head>
+
+  <body>
+    <div class="overlay"></div>
+
+    <header class="main-header">
+      <div class="logo-area">
+        <h1 class="title">OVERWATCH <span class="accent">DATABASE</span></h1>
+        <p class="subtitle">SEASON 2 // REIGN OF TALON: SUMMIT // HERO PERFORMANCE</p>
+      </div>
+    </header>
+
+    <main>
+      <nav class="filter-bar">
+         <div class="filter-row">
+            <button class="filter-btn active" onclick="filterRole('All')">ALL HEROES</button>
+            <button class="filter-btn" onclick="filterRole('Tank')">TANK</button>
+            <button class="filter-btn" onclick="filterRole('Damage')">DAMAGE</button>
+            <button class="filter-btn" onclick="filterRole('Support')">SUPPORT</button>
+          </div>
+          <div class="filter-row">
+            <span style="color: #888; font-size: 0.8rem; letter-spacing: 2px;">SORT BY</span>
+            <button class="filter-btn" onclick="sortHeros('winRate')">WIN RATE</button>
+            <button class="filter-btn" onclick="sortHeros('pickRate')">PICK RATE</button>
+      </div>
+        </nav>
+
+      <div id="card-container"></div>
+
+      <div class="card-template" style="display: none">
+        <div class="card">
+          <div class="card-inner">
+            <div class="hero-image-container">
+              <img src="" alt="Hero Portrait" class="hero-portrait" />
+              <div class="role-tag">ROLE</div>
+            </div>
+            
+            <div class="card-content">
+              <h2 class="hero-name">Hero Name</h2>
+              
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <span class="stat-label">WIN RATE</span>
+                  <span class="stat-value win-rate">0%</span>
+                  <div class="stat-bar-bg"><div class="stat-bar-fill win-bar"></div></div>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">PICK RATE</span>
+                  <span class="stat-value pick-rate">0%</span>
+                  <div class="stat-bar-bg"><div class="stat-bar-fill pick-bar"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="card-border-accent"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>DATA LAST RECOVERED FROM TALON & SNAP ACADEMY ENGINEERING OPERATIONS HACKER ON APRIL 20th, 2026 / UNAUTHORIZED ACCESS PROHIBITED</p>
+      <div class="footer-buttons">
+        <button onclick="quoteAlert()" class="action-btn">ACTIVATE SYSTEM PROTOCOL</button>
+        <button onclick="removeLastCard()" class="action-btn secondary">PURGE AGENT DATA</button>
+      </div>
+    </footer>
+  </body>
+</html>
